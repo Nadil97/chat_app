@@ -19,7 +19,7 @@ class appBarMain extends StatelessWidget implements PreferredSizeWidget {
 }
 
 TextStyle simpleTextStyle() {
-  return TextStyle(color: Colors.white);
+  return TextStyle(color: Colors.white, fontSize: 17);
 }
 
 InputDecoration textFieldInputDecoration(String hintText) {

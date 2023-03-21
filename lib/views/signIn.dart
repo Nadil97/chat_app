@@ -35,6 +35,24 @@ class _SignInState extends State<SignIn> {
                     style: simpleTextStyle(),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.symmetric(vertical: 20),
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                      const Color(0xff00008B),
+                      const Color(0xff2A75BC)
+                    ]),
+                    borderRadius: BorderRadius.circular(30)),
+                child: Text(
+                  "Sign In",
+                  style: simpleTextStyle(),
+                ),
               )
             ],
           )),
