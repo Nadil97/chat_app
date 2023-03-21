@@ -8,17 +8,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-       
+        scaffoldBackgroundColor: Color(0xff1F1F1F),
         primarySwatch: Colors.blue,
       ),
-      home:SignIn(),
+      home: SignIn(),
     );
   }
 }
-
