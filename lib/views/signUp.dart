@@ -9,6 +9,9 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  TextEditingController _userNameController = new TextEditingController();
+  TextEditingController _emailController = new TextEditingController();
+  TextEditingController _passwordController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +25,9 @@ class _SignUpState extends State<SignUp> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  TextField(
+                      style: simpleTextStyle(),
+                      decoration: textFieldInputDecoration("User name")),
                   TextField(
                       style: simpleTextStyle(),
                       decoration: textFieldInputDecoration("email")),
@@ -85,11 +91,11 @@ class _SignUpState extends State<SignUp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Dont have account ? ',
+                        'Alredy have account ? ',
                         style: mediamTextStyle(),
                       ),
                       Text(
-                        'Register Now',
+                        'SignIn Now',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 17,
