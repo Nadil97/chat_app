@@ -16,7 +16,24 @@ class AuthMethod {
       User? firebaseUser = result.user;
       return _userFromFirebaseUser(firebaseUser!);
     } catch (e) {
-      print(e);
+      print(e.toString());
+    }
+  }
+
+  Future signUpWithEmailAndPassword(String email, String password) async {
+    try {
+      UserCredential result = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      User? firebaseUser = result.user;
+      return _userFromFirebaseUser(firebaseUser!);
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  Future resetPass(String email) async {
+    try {} catch (e) {
+      print(e.toString());
     }
   }
 }
