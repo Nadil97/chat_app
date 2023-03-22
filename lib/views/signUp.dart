@@ -26,12 +26,15 @@ class _SignUpState extends State<SignUp> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   TextField(
+                      controller: _userNameController,
                       style: simpleTextStyle(),
                       decoration: textFieldInputDecoration("User name")),
                   TextField(
+                      controller: _emailController,
                       style: simpleTextStyle(),
                       decoration: textFieldInputDecoration("email")),
                   TextField(
+                      controller: _passwordController,
                       style: simpleTextStyle(),
                       decoration: textFieldInputDecoration("password")),
                   SizedBox(
