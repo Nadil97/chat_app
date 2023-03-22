@@ -32,7 +32,17 @@ class AuthMethod {
   }
 
   Future resetPass(String email) async {
-    try {} catch (e) {
+    try {
+      return await _auth.sendPasswordResetEmail(email: email);
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  Future signOut() async {
+    try {
+      return await _auth.signOut();
+    } catch (e) {
       print(e.toString());
     }
   }
