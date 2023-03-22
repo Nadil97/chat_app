@@ -29,92 +29,96 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBarMain(),
-      body: Container(
-        alignment: Alignment.bottomCenter,
+      body: SingleChildScrollView(
         child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextField(
-                    style: simpleTextStyle(),
-                    decoration: textFieldInputDecoration("email")),
-                TextField(
-                    style: simpleTextStyle(),
-                    decoration: textFieldInputDecoration("password")),
-                SizedBox(
-                  height: 8,
-                ),
-                Container(
-                  alignment: Alignment.centerRight,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          height: MediaQuery.of(context).size.height - 40,
+          alignment: Alignment.bottomCenter,
+          child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TextField(
+                      style: simpleTextStyle(),
+                      decoration: textFieldInputDecoration("email")),
+                  TextField(
+                      style: simpleTextStyle(),
+                      decoration: textFieldInputDecoration("password")),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      child: Text(
+                        'Forget Password',
+                        style: simpleTextStyle(),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                          const Color(0xff00008B),
+                          const Color(0xff2A75BC)
+                        ]),
+                        borderRadius: BorderRadius.circular(30)),
                     child: Text(
-                      'Forget Password',
+                      "Sign In",
                       style: simpleTextStyle(),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.symmetric(vertical: 20),
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        const Color(0xff00008B),
-                        const Color(0xff2A75BC)
-                      ]),
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Text(
-                    "Sign In",
-                    style: simpleTextStyle(),
+                  // signIn with Google button
+                  SizedBox(
+                    height: 10,
                   ),
-                ),
-                // signIn with Google button
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.symmetric(vertical: 20),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30)),
-                  child: Text(
-                    "Sign In with Google",
-                    style: TextStyle(color: Colors.black87, fontSize: 17),
+                  Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Text(
+                      "Sign In with Google",
+                      style: TextStyle(color: Colors.black87, fontSize: 17),
+                    ),
                   ),
-                ),
-                //
-                SizedBox(
-                  height: 10,
-                ),
-                // cretae register now option
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Dont have account ? ',
-                      style: mediamTextStyle(),
-                    ),
-                    Text(
-                      'Register Now',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          decoration: TextDecoration.underline),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 70,
-                )
-              ],
-            )),
+                  //
+                  SizedBox(
+                    height: 10,
+                  ),
+                  // cretae register now option
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Dont have account ? ',
+                        style: mediamTextStyle(),
+                      ),
+                      Text(
+                        'Register Now',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            decoration: TextDecoration.underline),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 70,
+                  )
+                ],
+              )),
+        ),
       ),
     );
   }
