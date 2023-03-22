@@ -53,7 +53,7 @@ class _SignInState extends State<SignIn> {
                       padding:
                           EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       child: Text(
-                        'Forget Password',
+                        'Forget Password !',
                         style: simpleTextStyle(),
                       ),
                     ),
