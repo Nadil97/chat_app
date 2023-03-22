@@ -1,3 +1,20 @@
+/*
+ * Copyright (c) 2021. by MechSIT (Pvt) Ltd
+ *
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information
+ * of MechSIT (Pvt) Ltd. ("Confidential Information"). You
+ * shall not disclose such Confidential Information and shall use
+ * it only in accordance with the terms of the license agreement
+ * you entered into with MechSIT (Pvt) Ltd.
+ *
+ *
+ * @Author Nadil Sandaruwan
+ * @Date 22/03/2023
+ */
+
+
 import 'package:chat_app/widget/widget.dart';
 import 'package:flutter/material.dart';
 
@@ -53,6 +70,30 @@ class _SignInState extends State<SignIn> {
                   "Sign In",
                   style: simpleTextStyle(),
                 ),
+              ),
+              // signIn with Google button
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.symmetric(vertical: 20),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30)),
+                child: Text(
+                  "Sign In with Google",
+                  style: TextStyle(color: Colors.black87, fontSize: 17),
+                ),
+              ),
+              //
+              SizedBox(
+                height: 10,
+              ),
+              // cretae register now option
+              row(
+                
               )
             ],
           )),
