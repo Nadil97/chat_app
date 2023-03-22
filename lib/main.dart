@@ -1,4 +1,5 @@
 import 'package:chat_app/views/signIn.dart';
+import 'package:chat_app/views/signUp.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xff1F1F1F),
         primarySwatch: Colors.blue,
       ),
-      home: SignIn(),
+      // home: SignIn(),
+      home: SignUp(),
     );
   }
 }
