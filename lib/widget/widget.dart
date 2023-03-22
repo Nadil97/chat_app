@@ -19,7 +19,7 @@ class appBarMain extends StatelessWidget implements PreferredSizeWidget {
 }
 
 TextStyle simpleTextStyle() {
-  return TextStyle(color: Colors.white, fontSize: 17);
+  return TextStyle(color: Colors.white, fontSize: 16);
 }
 
 InputDecoration textFieldInputDecoration(String hintText) {
@@ -30,4 +30,8 @@ InputDecoration textFieldInputDecoration(String hintText) {
           UnderlineInputBorder(borderSide: BorderSide(color: Colors.white60)),
       enabledBorder:
           UnderlineInputBorder(borderSide: BorderSide(color: Colors.white54)));
+}
+
+TextStyle mediamTextStyle() {
+  return TextStyle(color: Colors.white, fontSize: 17);
 }

@@ -14,7 +14,6 @@
  * @Date 22/03/2023
  */
 
-
 import 'package:chat_app/widget/widget.dart';
 import 'package:flutter/material.dart';
 
@@ -92,8 +91,21 @@ class _SignInState extends State<SignIn> {
                 height: 10,
               ),
               // cretae register now option
-              row(
-                
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Dont have account ? ',
+                    style: mediamTextStyle(),
+                  ),
+                  Text(
+                    'Register Now',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                        decoration: TextDecoration.underline),
+                  )
+                ],
               )
             ],
           )),
