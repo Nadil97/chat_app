@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'chatRoom.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+  // const SignUp({super.key});
+  final Function toggle;
+  SignUp(this.toggle);
 
   @override
   State<SignUp> createState() => _SignUpState();
@@ -158,12 +160,20 @@ class _SignUpState extends State<SignUp> {
                               'Alredy have account ? ',
                               style: mediamTextStyle(),
                             ),
-                            Text(
-                              'SignIn Now',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  decoration: TextDecoration.underline),
+                            GestureDetector(
+                              onTap: (() {
+                                widget.toggle();
+                              }),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(vertical: 8),
+                                child: Text(
+                                  'SignIn Now',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      decoration: TextDecoration.underline),
+                                ),
+                              ),
                             ),
                           ],
                         ),
