@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widget/widget.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -11,6 +12,29 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: appBarMain(),
+      body: Container(
+          child: Column(
+        children: [
+          Container(
+            color: Color(0x54FFFFFF),
+            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            child: Row(
+              children: [
+                Expanded(
+                    child: TextField(
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                      hintText: "Search user name",
+                      hintStyle: TextStyle(color: Colors.white54)),
+                )),
+                Image.asset('assets/images/serch.png')
+              ],
+            ),
+          )
+        ],
+      )),
+    );
   }
 }
