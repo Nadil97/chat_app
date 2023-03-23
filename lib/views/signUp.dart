@@ -2,6 +2,8 @@ import 'package:chat_app/service/auth.dart';
 import 'package:chat_app/widget/widget.dart';
 import 'package:flutter/material.dart';
 
+import 'chatRoom.dart';
+
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
 
@@ -26,7 +28,9 @@ class _SignUpState extends State<SignUp> {
           .signUpWithEmailAndPassword(
               _emailController.text, _passwordController.text)
           .then((val) {
-        print("$val");
+        // print("${val.uId}");
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => ChatRoom()));
       });
     }
   }
