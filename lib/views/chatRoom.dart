@@ -1,4 +1,5 @@
 import 'package:chat_app/service/auth.dart';
+import 'package:chat_app/views/signIn.dart';
 import 'package:flutter/material.dart';
 
 class ChatRoom extends StatefulWidget {
@@ -21,7 +22,11 @@ class _ChatRoomState extends State<ChatRoom> {
         ),
         actions: [
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              authMethod.signOut();
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => SignIn()));
+            },
             child: Container(child: Icon(Icons.exit_to_app)),
           )
         ],
