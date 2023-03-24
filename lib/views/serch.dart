@@ -29,7 +29,11 @@ class _SearchScreenState extends State<SearchScreen> {
                       hintText: "Search user name",
                       hintStyle: TextStyle(color: Colors.white54)),
                 )),
-                Image.asset('assets/images/serch.png')
+                Container(
+                    height: 60,
+                    width: 60,
+                    padding: EdgeInsets.all(8),
+                    child: Image.asset('assets/images/serch.png'))
               ],
             ),
           )
