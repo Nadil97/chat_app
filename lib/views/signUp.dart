@@ -25,6 +25,10 @@ class _SignUpState extends State<SignUp> {
 
   signMeUp() {
     if (formKey.currentState!.validate()) {
+      Map<String, String> userInfoMap = {
+        "name": _userNameController.text,
+        "email": _emailController.text
+      };
       setState(() {
         isLoading = true;
       });
@@ -34,10 +38,6 @@ class _SignUpState extends State<SignUp> {
           .then((val) {
         // print("${val.uId}");
 
-        Map<String, String> userInfoMap = {
-          "name": _userNameController.text,
-          "email": _emailController.text
-        };
         databaseMethods.uploadUserInfo(userInfoMap);
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => ChatRoom()));
