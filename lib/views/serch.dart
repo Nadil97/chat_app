@@ -25,6 +25,7 @@ class _SearchScreenState extends State<SearchScreen> {
               children: [
                 Expanded(
                     child: TextField(
+                  controller: serchEditingController,
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       hintText: "Search user name",
