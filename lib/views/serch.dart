@@ -10,6 +10,7 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  TextEditingController serchEditingController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +31,14 @@ class _SearchScreenState extends State<SearchScreen> {
                       hintStyle: TextStyle(color: Colors.white54)),
                 )),
                 Container(
-                    height: 60,
-                    width: 60,
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [
+                          const Color(0x36FFFFFF),
+                          const Color(0X0FFFFFFF)
+                        ]),
+                        borderRadius: BorderRadius.circular(40)),
                     padding: EdgeInsets.all(8),
                     child: Image.asset('assets/images/serch.png'))
               ],
