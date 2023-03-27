@@ -1,4 +1,5 @@
 import 'package:chat_app/service/database.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../widget/widget.dart';
@@ -13,6 +14,24 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   DatabaseMethods databaseMethods = new DatabaseMethods();
   TextEditingController serchEditingController = new TextEditingController();
+
+  late QuerySnapshot searchSnapshot;
+  initiateSearch() {
+    databaseMethods.getUserByUsername(serchEditingController.text).then((val) {
+      searchSnapshot = val;
+    });
+  }
+
+  Widget searchList() {
+    return ListView.builder(
+        itemCount: searchSnapshot.docs.length,
+        itemBuilder: (context, index) {
+          return SerchTile(
+            userName: searchSnapshot.docs[index].data["userName"],
+           userEmail: "");
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,11 +54,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 )),
                 GestureDetector(
                   onTap: (() {
-                    databaseMethods
-                        .getUserByUsername(serchEditingController.text)
-                        .then((val) {
-                      print(val.toString());
-                    });
+                    initiateSearch();
                   }),
                   child: Container(
                       height: 50,
@@ -58,6 +73,42 @@ class _SearchScreenState extends State<SearchScreen> {
           )
         ],
       )),
+    );
+  }
+}
+
+class SerchTile extends StatelessWidget {
+  // const SerchTile({super.key});
+  final String userName;
+  final String userEmail;
+  SerchTile({required this.userName, required this.userEmail});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        children: [
+          Column(
+            children: [
+              Text(
+                userName,
+                style: simpleTextStyle(),
+              ),
+              Text(
+                userEmail,
+                style: simpleTextStyle(),
+              )
+            ],
+          ),
+          Spacer(),
+          Container(
+            decoration: BoxDecoration(
+                color: Colors.blue, borderRadius: BorderRadius.circular(30)),
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: Text("Message"),
+          )
+        ],
+      ),
     );
   }
 }
