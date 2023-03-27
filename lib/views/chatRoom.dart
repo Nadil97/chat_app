@@ -38,7 +38,7 @@ class _ChatRoomState extends State<ChatRoom> {
         child: Icon(Icons.search),
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SearchScreen()));
+              context, MaterialPageRoute(builder: (context) => Search()));
         },
       ),
     );

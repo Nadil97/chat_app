@@ -1,3 +1,4 @@
+import 'package:chat_app/views/serch.dart';
 import 'package:chat_app/views/signIn.dart';
 import 'package:chat_app/views/signUp.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: SignIn(),
       home: Authenticate(),
+      // home: SearchScreen(),
     );
   }
 }

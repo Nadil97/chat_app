@@ -13,4 +13,6 @@ class DatabaseMethods {
       print(e.toString());
     });
   }
+
+  searchByName(String text) {}
 }
