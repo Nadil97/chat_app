@@ -27,8 +27,8 @@ class _SearchScreenState extends State<SearchScreen> {
         itemCount: searchSnapshot.docs.length,
         itemBuilder: (context, index) {
           return SerchTile(
-            userName: searchSnapshot.docs[index].data["userName"],
-           userEmail: "");
+            userName: searchSnapshot.docs[index]["name"],
+           userEmail: searchSnapshot.docs[index]["email"]);
         });
   }
 
